@@ -1,0 +1,20 @@
+[package]
+name = "share"
+version = "0.1.0"
+authors = ["rjman", "hacpy"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = { version = "1.0.125", features = ["derive"] }
+bevy_networking_turbulence = { version = "0.3.0", default-features = false, features = ["use-webrtc"] }
+
+# rust game engine, use "--features bevy/dynamic" to enable fast compiles
+bevy = { version = "0.5.0" }
+# bevy = { version = "0.5.0", features = ["dynamic"] }
+# NOTE: Remember to revert this before releasing your game!
+# Otherwise you will need to include libbevy_dylib alongside your game if you want it to run.
+# If you remove the "dynamic" feature, your game executable can run standalone.
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
