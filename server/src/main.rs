@@ -66,7 +66,7 @@ fn handle_network_events(
         match event {
             NetworkEvent::Connected(handle) => match net.connections.get_mut(&handle) {
                 Some(_connection) => {
-                    println!("New connection handle: {:?}", &handle);
+                    println!("New connection handle: {:?}", handle);
 
                     let (entity, user) = unowned_users.iter().next().expect("No unowned user");
                     cmd.entity(entity).insert(NetworkHandle(*handle));
@@ -76,8 +76,8 @@ fn handle_network_events(
                 None => panic!("Got packet for non-existing connection [{}]", handle),
             },
             NetworkEvent::Packet(handle, packet) => {
-                let message = String::from_utf8_lossy(&*packet);
-                log::info!("Got packet on [{}]: {}", handle, message);
+                let message = String::from_utf8_lossy(packet);
+                println!("Got packet on [{}]: {}", handle, message);
                 if message == "PING" {
                     let message = format!("PONG @ {}", time.seconds_since_startup());
                     match net.send(*handle, Packet::from(message)) {

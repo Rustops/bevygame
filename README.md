@@ -14,6 +14,8 @@
 
 2. `cargo build --release`
 
+## Run
+
 ## Reference
 
 [bevy tutor](https://bevyengine.org/learn/book/getting-started/setup/)
