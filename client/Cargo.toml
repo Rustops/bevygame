@@ -1,0 +1,19 @@
+[package]
+name = "client"
+version = "0.1.0"
+authors = ["rjman", "hacpy"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+share = { path = "../share" }
+
+bevy = { version = "0.5.0" }
+bevy_networking_turbulence = { version = "0.3.0", default-features = false, features = ["use-webrtc"] }
+# bevy_web_fullscreen = { git = "https://github.com/ostwilkens/bevy_web_fullscreen.git" }
+# bevy_webgl2 = "0.5.2"
+log = "0.4.14"
+console_log = "0.2"
+console_error_panic_hook = "0.1.6"
+cfg-if = "1.0"
